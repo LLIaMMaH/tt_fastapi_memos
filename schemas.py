@@ -1,6 +1,6 @@
 from typing import Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 
 class SMemoAdd(BaseModel):
@@ -10,6 +10,8 @@ class SMemoAdd(BaseModel):
 
 class SMemo(SMemoAdd):
     id: int
+
+    model_config = ConfigDict(from_attributes=True)
 
 
 class SMemeId(BaseModel):
